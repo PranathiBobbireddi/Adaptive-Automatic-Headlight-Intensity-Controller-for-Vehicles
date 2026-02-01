@@ -67,13 +67,9 @@ All operations are **fully automatic**, ensuring driver safety and convenience.
 
 ## Results and Observations
 
-| Ambient Condition | Distance (cm) | LED Brightness |
-|------------------|--------------|---------------|
-| Dark             | 200 cm       | 255 (Full)    |
-| Dark             | 20 cm        | 127 (Dim)     |
-| Bright           | 200 cm       | 90 (Dim)      |
-| Bright           | 20 cm        | 50 (Low)      |
 <img width="610" height="191" alt="Image" src="https://github.com/user-attachments/assets/d2308cbc-b43d-4342-b55a-0fe62cc26e15" />
+<img width="599" height="421" alt="Image" src="https://github.com/user-attachments/assets/878027b8-e06d-4039-a644-64393abd5331" />
+
  The system successfully adapts headlight intensity based on both **light and distance**, validating the effectiveness of the design.
 
 ---
