@@ -73,7 +73,7 @@ All operations are **fully automatic**, ensuring driver safety and convenience.
 | Dark             | 20 cm        | 127 (Dim)     |
 | Bright           | 200 cm       | 90 (Dim)      |
 | Bright           | 20 cm        | 50 (Low)      |
-
+<img width="610" height="191" alt="Image" src="https://github.com/user-attachments/assets/d2308cbc-b43d-4342-b55a-0fe62cc26e15" />
  The system successfully adapts headlight intensity based on both **light and distance**, validating the effectiveness of the design.
 
 ---
