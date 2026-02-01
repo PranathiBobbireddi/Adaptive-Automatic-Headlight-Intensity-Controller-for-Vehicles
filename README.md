@@ -54,7 +54,7 @@ All operations are **fully automatic**, ensuring driver safety and convenience.
 | Ultrasonic Echo     | D5          |
 | LED (PWM Control)   | D1          |
 | Power Supply        | USB / 5V    |
-
+<img width="324" height="257" alt="Image" src="https://github.com/user-attachments/assets/b1a66a42-b5c9-4974-a01d-9cfa861f035c" />
 ---
 
 ## Software & Tools
