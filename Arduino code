@@ -1,0 +1,68 @@
+#define LDR_PIN A0        // LDR connected to Analog pin A0
+#define TRIG_PIN D6       // Ultrasonic Trigger pin
+#define ECHO_PIN D5       // Ultrasonic Echo pin
+#define LED_PIN  D1       // LED connected to PWM pin D1
+
+long duration;
+int distance;
+int ldrValue;
+int ledBrightness;
+
+void setup() {
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
+  pinMode(LED_PIN, OUTPUT);
+
+  Serial.begin(9600);
+  Serial.println("Adaptive Headlight System Started");
+}
+
+void loop() {
+
+  /* Read LDR Value */
+  ldrValue = analogRead(LDR_PIN);  // 0 - 1024
+
+  /* Ultrasonic Distance Measurement */
+  digitalWrite(TRIG_PIN, LOW);
+  delayMicroseconds(2);
+
+  digitalWrite(TRIG_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG_PIN, LOW);
+
+  duration = pulseIn(ECHO_PIN, HIGH);
+  distance = duration * 0.034 / 2;  // Distance in cm
+
+  /* Brightness Control Logic */
+
+  // Case 1: Dark environment
+  if (ldrValue > 700) {
+    if (distance < 30) {
+      ledBrightness = 127;  // Dim to avoid glare
+    } else {
+      ledBrightness = 255;  // Full brightness
+    }
+  }
+
+  // Case 2: Bright environment
+  else {
+    if (distance < 30) {
+      ledBrightness = 50;   // Very low brightness
+    } else {
+      ledBrightness = 90;   // Low brightness
+    }
+  }
+
+  /* Apply PWM Output */
+  analogWrite(LED_PIN, ledBrightness);
+
+  /* Debug Output */
+  Serial.print("LDR Value: ");
+  Serial.print(ldrValue);
+  Serial.print(" | Distance: ");
+  Serial.print(distance);
+  Serial.print(" cm | LED Brightness: ");
+  Serial.println(ledBrightness);
+
+  delay(500);
+}
